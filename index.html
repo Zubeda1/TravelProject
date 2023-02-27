@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live your Dream</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">"
+    <link rel="stylesheet" href="styles/main2.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+          google.charts.load('current', {
+        'packages':['geochart'],
+      });
+      google.charts.setOnLoadCallback(drawRegionsMap);
+
+      function drawRegionsMap() {
+        var data = google.visualization.arrayToDataTable([
+          ['Country'],
+          ['Canada'],
+          ['United States'],
+          ['United Kingdom'],
+          ['Brazil'],
+          ['France'],
+          ['Japan'],
+          ['Turkey'],
+          ['Germany'],
+          ['India'],
+          ['Tanzania'],
+          ['Australia'],
+         
+
+
+        ]);
+        
+        var options = {
+          defaultColor: '#782945',
+        };
+
+        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+    
+        google.visualization.events.addListener(chart, 'regionClick', function(eventData) {
+    //this was my addition
+      if (eventData.region == data){
+      window.open("file:///Users/ZShahnan/Documents/TravelProject/pages/canada.html");
+      }
+       else if (eventData.region == 'FR'){
+      window.open("file:///Users/ZShahnan/Documents/TravelProject/pages/france.html`");
+       }
+
+       
+      });
+        chart.draw(data,options);
+    }
+    </script>
+    <title>World Map</title>
+    
+</head>
+<body>
+  <img src="./travelpic1.jpeg" target_blank alt="a girl with a hat viewing tombs" class="travelpic1">
+  <h1>World Travel Interactive Map</h1>
+  <h4>DISCOVER EACH COUNTRY USING THIS WORLD INTERACTIVE MAP!</h4>
+  <h4> CLICK ON THE SHADED AREA TO LEARN MORE INFORMATION</h4>
+  <div id="regions_div" style="width: 1600px; height: 500px; padding: 1cm;"></div>
+  <div class ="container-md text-left">
+    <div class="row  gx-5 row-cols-5">
+        <div class="col-md">
+          <img src="./travelpic1.jpeg"style="width:1500;height: 40%;" >
+          <h3>America</h3>
+          <ul>
+            <li href="./pages/canada.html">Canada</li>
+            <li>Brazil</li>
+            <li>United States</li>
+
+           </ul>
+        </div>
+        <div class="col">
+          <img src="./travelpic1.jpeg" style="width:1500;height: 40%">
+            <h3>Europe</h3>
+             <ul>
+                <li>United Kingdom</li>
+                <li>France</li>
+                <li>Germany</li>
+                <li>Turkey</li>
+                
+              </ul>
+        </div>
+        <div class="col">
+          <img src="./travelpic1.jpeg" style="width:1500;height: 40%">
+          <h3>Africa</h3>
+           <ul>
+              <li>Tanzania</li>
+            </ul>
+        </div>
+        <div class="col">
+          <img src="./travelpic1.jpeg" style="width:1500;height: 40%;">
+          <h3>Asia</h3>
+           <ul>
+              <li>India</li>
+              <li>Japan</li>
+            </ul>
+        </div>
+        <div class="col">
+          <img src="./travelpic1.jpeg" style="width:1500;height: 40%">
+        <h3>Oceanic</h3>
+         <ul>
+            <li>Australia</li>
+          </ul>
+        </div>
+    </div>
+</div>  
+
+</body>
+</html>
